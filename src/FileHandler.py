@@ -37,5 +37,4 @@ def sort_score(scores:dict, N:int = 10) -> dict:
     """    
     ordered_dict =  {i:j for i,j in sorted(scores.items(), 
                     key = lambda x:x[1], reverse=True)}
-
     return {i:j for i,j in islice(ordered_dict.items(), N)}
