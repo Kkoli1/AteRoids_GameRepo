@@ -12,7 +12,7 @@ class babyroid:
             x (int): x position of the object
             time (int): time the object will be printed
         """
-        self.surf = pygame.image.load('Assets/BabyRoid.png')
+        self.surf = pygame.image.load('assets/BabyRoid.png')
         self.x = x
         self.x_copy = x
         self.y = -50
@@ -20,7 +20,7 @@ class babyroid:
         self.rect = self.surf.get_rect(midbottom=(x, self.y))
         self.taken = False
 
-    def collisionDetector(self, obj: pygame.rect) -> bool:
+    def collision_detector(self, obj: pygame.rect) -> bool:
         """to detect collision towards a babyroid object
 
         Args:
@@ -52,7 +52,7 @@ class babyroid:
         global score
         x = 0
         y = 3
-        if self.collisionDetector(obj):
+        if self.collision_detector(obj):
             score += 1
             self.y = -50
             self.rect = self.surf.get_rect(midbottom=(self.x_copy, -50))
@@ -74,14 +74,14 @@ class bullet:
             x_offset (int): x speed
             y_offset (int): y speed
         """
-        self.surf = pygame.image.load('Assets/bullet.png')
+        self.surf = pygame.image.load('assets/bullet.png')
         self.x = x
         self.y = y
         self.x_offset = x_offset
         self.y_offset = y_offset
         self.rect = self.surf.get_rect(midbottom=(x, y))
 
-    def collisionDetector(self, obj):
+    def collision_detector(self, obj):
         """collision detector for bullets
 
         Args:
@@ -120,7 +120,7 @@ class ship:
         self.type = type
         self.x_pos = x
         self.y_pos = y
-        self.image = pygame.image.load('Assets/ship.png')
+        self.image = pygame.image.load('assets/ship.png')
         self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
         self.cooldown = cooldown
         self.ship_number = ship_number
@@ -321,7 +321,7 @@ class Level:
             screen.blit(i.surf, i.rect)
             i.move(5 * -(i.x_offset/250), 5 * -(i.y_offset/200))
 
-            if i.collisionDetector(obj):
+            if i.collision_detector(obj):
                 return True
 
 
@@ -410,12 +410,12 @@ def message() -> None:
         screen.blit(font_style.render(
             "Babyroids Caught:", True, 'Green'), (570, 270))
         for _ in range(0, score):
-            bbroid = pygame.image.load("Assets/BabyRoid.png")
+            bbroid = pygame.image.load("assets/BabyRoid.png")
             bbroid = pygame.transform.scale(bbroid, (50, 50))
             screen.blit(bbroid, (570+x, 300))
             x += 50
         for _ in range(0, 3-score):
-            bbroid = pygame.image.load("Assets/BabyRoidx.png")
+            bbroid = pygame.image.load("assets/BabyRoidx.png")
             bbroid = pygame.transform.scale(bbroid, (50, 50))
             screen.blit(bbroid, (570+x, 300))
             x += 50
@@ -423,29 +423,29 @@ def message() -> None:
             "Press C to Continue", True, 'Green'), (560, 350))
 
 
-if __name__ == '__main__':
-    pygame.init()
+# if __name__ == '__main__':
+pygame.init()
 
-    bullets = []
-    screen = pygame.display.set_mode((1280, 720))
-    previous_time = pygame.time.get_ticks()
-    score = 0
-    width = 250
-    height = 700
-    win = False
+bullets = []
+screen = pygame.display.set_mode((1280, 720))
+previous_time = pygame.time.get_ticks()
+score = 0
+width = 250
+height = 700
+win = False
 
-    pygame.display.set_caption('AteRhoids')
+pygame.display.set_caption('AteRhoids')
 
-    clock = pygame.time.Clock()
-    font_style = pygame.font.Font(None, 25)
+clock = pygame.time.Clock()
+font_style = pygame.font.Font(None, 25)
 
-    background_surf = pygame.image.load('Assets/bg.png')
-    px, py = background_surf.get_size()
-    background_surf = pygame.transform.scale(background_surf, (px, 700))
-    background_rect = background_surf.get_rect()
+background_surf = pygame.image.load('assets/bg.png')
+px, py = background_surf.get_size()
+background_surf = pygame.transform.scale(background_surf, (px, 700))
+background_rect = background_surf.get_rect()
 
-    ateRhoid_surf = pygame.image.load('Assets/AteRhoids.png')
-    pygame.mouse.set_pos((250, 700))
-    ateRhoid_rect = ateRhoid_surf.get_rect(center=(250, 700))
+ateRhoid_surf = pygame.image.load('assets/AteRhoids.png')
+pygame.mouse.set_pos((250, 700))
+ateRhoid_rect = ateRhoid_surf.get_rect(center=(250, 700))
 
-    start_game(1)
+start_game(1)
