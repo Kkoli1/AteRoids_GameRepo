@@ -132,8 +132,268 @@
               
               <div>
                 
-  <div class="section" id="ateroidsgame-module">
-<h1>AteroidsGame module<a class="headerlink" href="#ateroidsgame-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-AteroidsGame">
+<span id="ateroidsgame-module"></span><h1>AteroidsGame module<a class="headerlink" href="#module-AteroidsGame" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="AteroidsGame.Level">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">Level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/AteroidsGame.html#Level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.add_babyroid">
+<span class="sig-name descname"><span class="pre">add_babyroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.add_babyroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.add_babyroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds babyroid entity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>int</em>) -- point in time it adds baby roid</p></li>
+<li><p><strong>x</strong> (<em>int</em>) -- position of the baby roid</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.add_ship">
+<span class="sig-name descname"><span class="pre">add_ship</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooldown</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.add_ship"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.add_ship" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds a ship to the the ship queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>int</em>) -- the time where the ship will be present on the screen</p></li>
+<li><p><strong>x</strong> (<em>int</em>) -- x location of the ship</p></li>
+<li><p><strong>y</strong> (<em>int</em>) -- y location of the ship</p></li>
+<li><p><strong>cooldown</strong> (<em>int</em>) -- shooting cooldown</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.restart">
+<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.restart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>restarts the score</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<em>float</em>) -- time that is assigned to the last game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.show_babyroid">
+<span class="sig-name descname"><span class="pre">show_babyroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.show_babyroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.show_babyroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>shows babyroid in the screen</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>object</em>) -- babyroid instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.show_bullets">
+<span class="sig-name descname"><span class="pre">show_bullets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pygame.Rect</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.show_bullets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.show_bullets" title="Permalink to this definition">¶</a></dt>
+<dd><p>shows the bullet on the screen</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>pygame.rectangle</em>) -- asteroid object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if the asteroid object collided to a bullet</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.show_ship">
+<span class="sig-name descname"><span class="pre">show_ship</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mouse_pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pygame.Rect</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.show_ship"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.show_ship" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to put the ship on the screen</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mouse_pos</strong> (<em>tuple&lt;int&gt;</em>) -- mouse position</p></li>
+<li><p><strong>obj</strong> (<em>pygame.rectangle</em>) -- asteroid object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if the asteroid object collided to a bullet</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.Level.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#Level.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.Level.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main game loop</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>score at the end of the game</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AteroidsGame.babyroid">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">babyroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/AteroidsGame.html#babyroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.babyroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.babyroid.collision_detector">
+<span class="sig-name descname"><span class="pre">collision_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pygame.Rect</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#babyroid.collision_detector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.babyroid.collision_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>to detect collision towards a babyroid object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>pygame.Rect</em>) -- the obj where the collision detector must detect</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the objects collided</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.babyroid.move">
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#babyroid.move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.babyroid.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>moves the babyroid object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) -- x offset of the object movement</p></li>
+<li><p><strong>y</strong> (<em>int</em>) -- y offset of the object movement</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.babyroid.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pygame.Rect</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#babyroid.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.babyroid.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the position of the babyroid object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>pygame.Rect</em>) -- the asteroid object to check if collision happens</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AteroidsGame.bullet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">bullet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mouse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_offset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/AteroidsGame.html#bullet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.bullet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.bullet.collision_detector">
+<span class="sig-name descname"><span class="pre">collision_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pygame.Rect</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#bullet.collision_detector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.bullet.collision_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>collision detector for bullets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>pygame.Rect</em>) -- what object should be tested for collision</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if the objects being checked collided</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.bullet.move">
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#bullet.move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.bullet.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to move the bullet object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) -- x speed offset</p></li>
+<li><p><strong>y</strong> (<em>int</em>) -- y speed offset</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AteroidsGame.initialize_game">
+<span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">initialize_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#initialize_game"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.initialize_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>initilize the levels of the ateroids game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>returns the created levels</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>level</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AteroidsGame.message">
+<span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the prompt when game_over = true</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AteroidsGame.ship">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">ship</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooldown</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ship_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/AteroidsGame.html#ship"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.ship" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.ship.rotate">
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rise</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#ship.rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.ship.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>a method that makes the ship rotate to follow the mouse cursor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>run</strong> (<em>int</em>) -- x offset value</p></li>
+<li><p><strong>rise</strong> (<em>int</em>) -- y offset value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns the suface and rectangle of the object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pygame.surface, pygame.rectangle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AteroidsGame.ship.shoot">
+<span class="sig-name descname"><span class="pre">shoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mouse_pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rise</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#ship.shoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.ship.shoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>function that will create a bullet from a ship</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mouse_pos</strong> (<em>tuple&lt;int&gt;</em>) -- x and y postion of the mouse</p></li>
+<li><p><strong>run</strong> (<em>int</em>) -- x offset value</p></li>
+<li><p><strong>rise</strong> (<em>int</em>) -- y offset value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AteroidsGame.start_game">
+<span class="sig-prename descclassname"><span class="pre">AteroidsGame.</span></span><span class="sig-name descname"><span class="pre">start_game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plevel</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/AteroidsGame.html#start_game"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AteroidsGame.start_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

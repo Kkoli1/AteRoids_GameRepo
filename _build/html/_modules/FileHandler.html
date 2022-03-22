@@ -124,11 +124,11 @@
 <span class="kn">from</span> <span class="nn">json</span> <span class="kn">import</span> <span class="n">loads</span><span class="p">,</span> <span class="n">dumps</span>
 
 
-<div class="viewcode-block" id="FileHandler"><a class="viewcode-back" href="../docs/FileHandler.html#FileHandler.FileHandler">[docs]</a><span class="nd">@dataclass</span>
+<div class="viewcode-block" id="FileHandler"><a class="viewcode-back" href="../src/modules.html#FileHandler.FileHandler">[docs]</a><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">FileHandler</span><span class="p">:</span>     
     <span class="n">fname</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;game&#39;</span>
 
-<div class="viewcode-block" id="FileHandler.update_content"><a class="viewcode-back" href="../docs/FileHandler.html#FileHandler.FileHandler.update_content">[docs]</a>    <span class="k">def</span> <span class="nf">update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_obj</span><span class="p">:</span><span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="FileHandler.update_content"><a class="viewcode-back" href="../src/modules.html#FileHandler.FileHandler.update_content">[docs]</a>    <span class="k">def</span> <span class="nf">update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_obj</span><span class="p">:</span><span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;update game file contents </span>
 
 <span class="sd">        Args:</span>
@@ -137,7 +137,7 @@
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_obj</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span></div>
     
-<div class="viewcode-block" id="FileHandler.retrieve_content"><a class="viewcode-back" href="../docs/FileHandler.html#FileHandler.FileHandler.retrieve_content">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span> 
+<div class="viewcode-block" id="FileHandler.retrieve_content"><a class="viewcode-back" href="../src/modules.html#FileHandler.FileHandler.retrieve_content">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span> 
         <span class="sd">&quot;&quot;&quot;loads game file by parsing json object.</span>
 
 <span class="sd">        Returns:</span>
@@ -146,7 +146,7 @@
         <span class="k">return</span> <span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="sort_score"><a class="viewcode-back" href="../docs/FileHandler.html#FileHandler.sort_score">[docs]</a><span class="k">def</span> <span class="nf">sort_score</span><span class="p">(</span><span class="n">scores</span><span class="p">:</span><span class="nb">dict</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span> 
+<div class="viewcode-block" id="sort_score"><a class="viewcode-back" href="../src/modules.html#FileHandler.sort_score">[docs]</a><span class="k">def</span> <span class="nf">sort_score</span><span class="p">(</span><span class="n">scores</span><span class="p">:</span><span class="nb">dict</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span> 
     <span class="sd">&quot;&quot;&quot;Sorts first N-elements of game scores</span>
 
 <span class="sd">    Args:</span>

@@ -20,11 +20,11 @@ class babyroid:
         self.rect = self.surf.get_rect(midbottom=(x, self.y))
         self.taken = False
 
-    def collision_detector(self, obj: pygame.rect) -> bool:
+    def collision_detector(self, obj: pygame.Rect) -> bool:
         """to detect collision towards a babyroid object
 
         Args:
-            obj (pygame.rect): the obj where the collision detector must detect
+            obj (pygame.Rect): the obj where the collision detector must detect
 
         Returns:
             bool: True if the objects collided
@@ -43,11 +43,11 @@ class babyroid:
         self.rect = self.surf.get_rect(midbottom=(self.x, self.y))
         return self.surf, self.rect
 
-    def update(self, obj: pygame.rect) -> tuple:
+    def update(self, obj: pygame.Rect) -> tuple:
         """update the position of the babyroid object
 
         Args:
-            obj (pygame.rect): the asteroid object to check if collision happens
+            obj (pygame.Rect): the asteroid object to check if collision happens
         """
         global score
         x = 0
@@ -81,18 +81,18 @@ class bullet:
         self.y_offset = y_offset
         self.rect = self.surf.get_rect(midbottom=(x, y))
 
-    def collision_detector(self, obj):
+    def collision_detector(self, obj:pygame.Rect) -> bool:
         """collision detector for bullets
 
         Args:
-            obj (pygame.rect): what object should be tested for collision
+            obj (pygame.Rect): what object should be tested for collision
 
         Returns:
             bool: if the objects being checked collided
         """
         return self.rect.colliderect(obj)
 
-    def move(self, x, y):
+    def move(self, x:int, y:int) -> None:
         """method to move the bullet object
 
         Args:
@@ -151,7 +151,6 @@ class ship:
         Returns:
             pygame.surface, pygame.rectangle: returns the suface and rectangle of the object
         """
-
         angle = degrees(atan2(rise, run))
         image = pygame.transform.rotate(self.image, -angle)
         rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
@@ -173,17 +172,20 @@ class Level:
         """
         self.length = length
         self.seconds = 0
-        self.shipQueue = []
+        self.ship_queue = []
         self.babyroidQueue = []
         self.shipCounter = 0
         self.mouse_x = 0
         self.mouse_y = 0
         self.start_time = start_time
-        self.lastGame = 0
-        self.restartCnt = 0
+        self.last_game = 0
+        self.restart_count = 0
 
     def start(self) -> Optional[int]:
-        """Game mainloop
+        """Main game loop
+
+        Returns:
+            Optional[int]: score at the end of the game
         """
         global win
         game_over = False
@@ -194,7 +196,7 @@ class Level:
 
         while not game_over:
             self.seconds = (
-                (pygame.time.get_ticks()-self.start_time)/1000) - self.lastGame
+                (pygame.time.get_ticks()-self.start_time)/1000) - self.last_game
 
             mouse_x, mouse_y = pygame.mouse.get_pos()
             ateRhoid_rect = ateRhoid_surf.get_rect(center=(mouse_x, mouse_y))
@@ -250,7 +252,7 @@ class Level:
         pygame.quit()
         quit()
 
-    def show_ship(self, mouse_pos: tuple, obj: pygame.rect) -> Optional[bool]:
+    def show_ship(self, mouse_pos: tuple, obj: pygame.Rect) -> Optional[bool]:
         """function to put the ship on the screen
 
         Args:
@@ -261,7 +263,7 @@ class Level:
             bool: if the asteroid object collided to a bullet
         """
 
-        for i in self.shipQueue:
+        for i in self.ship_queue:
             run, rise = mouse_pos[0]-i.x_pos, mouse_pos[1]-i.y_pos
 
             if(self.seconds > i.time):
@@ -272,6 +274,11 @@ class Level:
         return self.show_bullets(obj)
 
     def show_babyroid(self, obj: object) -> None:
+        """shows babyroid in the screen
+
+        Args:
+            obj (object): babyroid instance
+        """        
         count = 0
         for i in self.babyroidQueue:
             if self.seconds > i.time:
@@ -280,7 +287,7 @@ class Level:
                 screen.blit(surf, rect)
             count += 1
 
-    def add_ship(self, time, x, y, cooldown):
+    def add_ship(self, time:int, x:int, y:int, cooldown:int) -> None:
         """adds a ship to the the ship queue
 
         Args:
@@ -289,26 +296,40 @@ class Level:
             y (int): y location of the ship
             cooldown (int): shooting cooldown
         """
-        ship1 = ship(1, x, y, cooldown, 0, time)
-        self.shipQueue.append(ship1)
+        ship_1 = ship(1, x, y, cooldown, 0, time)
+        self.ship_queue.append(ship_1)
 
-    def add_babyroid(self, time, x):
+    def add_babyroid(self, time:int, x:int) -> None:
+        """adds babyroid entity
+
+        Args:
+            time (int): point in time it adds baby roid
+            x (int): position of the baby roid
+        """        
         bbroid = babyroid(x, time)
         self.babyroidQueue.append(bbroid)
 
-    def restart(self, seconds):
+    def restart(self, seconds:float) -> None:
+        """restarts the score
+
+        Args:
+            seconds (float): time that is assigned to the last game
+        """        
         global bullets
         global score
-        self.lastGame = seconds
-        self.restartCnt += 1
+        
+        self.last_game = seconds
+        self.restart_count += 1
+        
         bullets = []
         score = 0
+        
         for i in self.babyroidQueue:
             i.y = -50
             i.taken = False
 
-    def show_bullets(self, obj:pygame.rect):
-        """prints the bullets
+    def show_bullets(self, obj:pygame.Rect) -> bool:
+        """shows the bullet on the screen
 
         Args:
             obj (pygame.rectangle): asteroid object

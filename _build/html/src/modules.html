@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>docs &#8212; AteroidGame 0.1 documentation</title>
+    <title>LambdaCpp_PTT &#8212; AteroidGame 0.1 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -132,10 +132,228 @@
               
               <div>
                 
-  <div class="section" id="docs">
-<h1>docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lambdacpp-ptt">
+<h1>LambdaCpp_PTT<a class="headerlink" href="#lambdacpp-ptt" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<span class="target" id="module-FileHandler"></span><dl class="py class">
+<dt class="sig sig-object py" id="FileHandler.FileHandler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">FileHandler.</span></span><span class="sig-name descname"><span class="pre">FileHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'game'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/FileHandler.html#FileHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FileHandler.FileHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="FileHandler.FileHandler.fname">
+<span class="sig-name descname"><span class="pre">fname</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'game'</span></em><a class="headerlink" href="#FileHandler.FileHandler.fname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="FileHandler.FileHandler.retrieve_content">
+<span class="sig-name descname"><span class="pre">retrieve_content</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/FileHandler.html#FileHandler.retrieve_content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FileHandler.FileHandler.retrieve_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>loads game file by parsing json object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>parsed json object as python dictionary.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="FileHandler.FileHandler.update_content">
+<span class="sig-name descname"><span class="pre">update_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/FileHandler.html#FileHandler.update_content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FileHandler.FileHandler.update_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>update game file contents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_obj</strong> (<em>dict</em>) -- dictionary that contains game information</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FileHandler.sort_score">
+<span class="sig-prename descclassname"><span class="pre">FileHandler.</span></span><span class="sig-name descname"><span class="pre">sort_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scores</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/FileHandler.html#sort_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FileHandler.sort_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts first N-elements of game scores</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scores</strong> (<em>dict</em>) -- game score</p></li>
+<li><p><strong>N</strong> (<em>int</em><em>, </em><em>optional</em>) -- Length of the new dictionary. Defaults to 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-UIElements"></span><dl class="py class">
+<dt class="sig sig-object py" id="UIElements.Button">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">UIElements.</span></span><span class="sig-name descname"><span class="pre">Button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovering_color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/UIElements.html#Button"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for button (Hoverable and Clickable)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.Button.change_color">
+<span class="sig-name descname"><span class="pre">change_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/UIElements.html#Button.change_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.Button.change_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>change the color of a button</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>coordinates</em>) -- coordinates of a button</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.Button.check_for_input">
+<span class="sig-name descname"><span class="pre">check_for_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/UIElements.html#Button.check_for_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.Button.check_for_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks for user input</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>list</em>) -- coordinates</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if the user input if within the button, the function returns true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.Button.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/UIElements.html#Button.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.Button.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>updates the button</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>screen</strong> (<em>object</em>) -- screen instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UIElements.LoadSlot">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">UIElements.</span></span><span class="sig-name descname"><span class="pre">LoadSlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovering_color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clickable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/UIElements.html#LoadSlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.LoadSlot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#UIElements.Button" title="UIElements.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">UIElements.Button</span></code></a></p>
+<p>Class for Load Game Slots (after clicking load game or new game)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.LoadSlot.check_for_input">
+<span class="sig-name descname"><span class="pre">check_for_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/UIElements.html#LoadSlot.check_for_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.LoadSlot.check_for_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks for user input</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>list</em>) -- coordinates</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if the input is clickable, it returns true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UIElements.SlotProfile">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">UIElements.</span></span><span class="sig-name descname"><span class="pre">SlotProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_input</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_color</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovering_color</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_score</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/UIElements.html#SlotProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#UIElements.Button" title="UIElements.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">UIElements.Button</span></code></a></p>
+<p>Class for Slot Profile (Hoverable and Clickable)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.SlotProfile.change_color">
+<span class="sig-name descname"><span class="pre">change_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/UIElements.html#SlotProfile.change_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotProfile.change_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>change the color of the slot profile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>list</em>) -- coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.SlotProfile.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/UIElements.html#SlotProfile.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotProfile.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>updates slot profile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>screen</strong> (<em>object</em>) -- screen object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UIElements.SlotReader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">UIElements.</span></span><span class="sig-name descname"><span class="pre">SlotReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/UIElements.html#SlotReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for Slot Reader (File Handler: Saved Games)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.SlotReader.check_if_exist">
+<span class="sig-name descname"><span class="pre">check_if_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/UIElements.html#SlotReader.check_if_exist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotReader.check_if_exist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.SlotReader.get_score">
+<span class="sig-name descname"><span class="pre">get_score</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="reference internal" href="../_modules/UIElements.html#SlotReader.get_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotReader.get_score" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.SlotReader.new_data">
+<span class="sig-name descname"><span class="pre">new_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot_no</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing_load</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/UIElements.html#SlotReader.new_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotReader.new_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UIElements.SlotReader.save_data">
+<span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_no</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/UIElements.html#SlotReader.save_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#UIElements.SlotReader.save_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Main"></span><dl class="py function">
+<dt class="sig sig-object py" id="Main.SlotProfile">
+<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">SlotProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lvl1</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lvl2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lvl3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_no</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/Main.html#SlotProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.SlotProfile" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Display when a slot is clicked</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lvl1</strong> (<em>string</em>) -- score for level 1 from text file</p></li>
+<li><p><strong>lvl2</strong> (<em>string</em>) -- score for level 2 from text file</p></li>
+<li><p><strong>lvl3</strong> (<em>string</em>) -- score for level 3 from text file</p></li>
+<li><p><strong>load_no</strong> (<em>int</em>) -- slot number selected</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Main.load_game">
+<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">load_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/Main.html#load_game"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.load_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display when LOAD GAME button is clicked</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Main.main_menu">
+<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">main_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/Main.html#main_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.main_menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main Loop</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Main.new_game">
+<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">new_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/Main.html#new_game"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.new_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display when NEW GAME button is clicked</p>
+</dd></dl>
+
 </div>
 
 

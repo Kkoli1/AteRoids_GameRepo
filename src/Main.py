@@ -13,32 +13,31 @@ def new_game() -> None:
 
         screen.fill("black")
 
-        #   BACK BUTTON for NEW GAME screen
-        new_game_back = Button(image=None, pos=(640, 590), text_input="BACK", 
+        new_game_back_btn = Button(image=None, pos=(640, 590), text_input="BACK", 
                             font=get_font(25), base_color="White", hovering_color="Green")
 
-        new_game_back.change_color(new_mouse_pos)
-        new_game_back.update(screen)
+        new_game_back_btn.change_color(new_mouse_pos)
+        new_game_back_btn.update(screen)
 
         slot_state_text = ""
-        #   SLOT 1 Button
-        load_slot_1 = LoadSlot(image=None, pos=(640, 140), 
+
+        slot_1_btn = LoadSlot(image=None, pos=(640, 140), 
                             text_input="SLOT 1: Create a new game" + slot_state_text, 
                             font=get_font(45), base_color="White", hovering_color="Green", clickable = True)
-        load_slot_1.change_color(new_mouse_pos)
-        load_slot_1.update(screen)
-        #   SLOT 2 Button
-        load_slot_2 = LoadSlot(image=None, pos=(640, 290), 
+        slot_1_btn.change_color(new_mouse_pos)
+        slot_1_btn.update(screen)
+
+        slot_2_btn = LoadSlot(image=None, pos=(640, 290), 
                             text_input="SLOT 2: Create a new game" + slot_state_text, 
                             font=get_font(45), base_color="White", hovering_color="Green", clickable = True)
-        load_slot_2.change_color(new_mouse_pos)
-        load_slot_2.update(screen)
-        #   SLOT 3 Button
-        load_slot_3 = LoadSlot(image=None, pos=(640, 440), 
+        slot_2_btn.change_color(new_mouse_pos)
+        slot_2_btn.update(screen)
+
+        slot_3_btn = LoadSlot(image=None, pos=(640, 440), 
                             text_input="SLOT 3: Create a new game" + slot_state_text, 
                             font=get_font(45), base_color="White", hovering_color="Green", clickable = True)
-        load_slot_3.change_color(new_mouse_pos)
-        load_slot_3.update(screen)
+        slot_3_btn.change_color(new_mouse_pos)
+        slot_3_btn.update(screen)
 
         #   GAME EVENTS
         for event in pygame.event.get():
@@ -46,10 +45,10 @@ def new_game() -> None:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if new_game_back.check_for_input(new_mouse_pos):
+                if new_game_back_btn.check_for_input(new_mouse_pos):
                     main_menu()
 
-                if load_slot_1.check_for_input(new_mouse_pos):
+                if slot_1_btn.check_for_input(new_mouse_pos):
                     slot_reader = SlotReader("saved_game.txt")
                     slot_reader.new_data("1", "True")
                     #   RETREIVING THE SCORES FROM THE FILE 
@@ -58,7 +57,7 @@ def new_game() -> None:
                     score3 = slot_reader.get_score()[4][0]
                     SlotProfile(score1,score2,score3,1)
 
-                if load_slot_2.check_for_input(new_mouse_pos):
+                if slot_2_btn.check_for_input(new_mouse_pos):
                     slot_reader_2 = SlotReader("saved_game2.txt")
                     slot_reader_2.new_data("2", "True")
                     #   RETREIVING THE SCORES FROM THE FILE 
@@ -67,7 +66,7 @@ def new_game() -> None:
                     score3 = slot_reader_2.get_score()[4][0]
                     SlotProfile(score1,score2,score3,2)
 
-                if load_slot_3.check_for_input(new_mouse_pos):
+                if slot_3_btn.check_for_input(new_mouse_pos):
                     slot_reader_3 = SlotReader("saved_game3.txt")
                     slot_reader_3.new_data("3", "True")
                     #   RETREIVING THE SCORES FROM THE FILE 
@@ -88,11 +87,10 @@ def load_game() -> None:
 
         screen.fill("black")
 
-        #   BACK BUTTON for LOAD GAME screen
-        load_game_back = Button(image=None, pos=(640, 590), 
+        load_game_back_btn = Button(image=None, pos=(640, 590), 
                             text_input="BACK", font=get_font(25), base_color="White", hovering_color="Green")
-        load_game_back.change_color(load_mouse_pos)
-        load_game_back.update(screen)
+        load_game_back_btn.change_color(load_mouse_pos)
+        load_game_back_btn.update(screen)
         
         slot_state_text = ""
 
@@ -103,10 +101,10 @@ def load_game() -> None:
             slot_state_text = "Click to Load"
         else:
             slot_state_text = "Empty slot"
-        load_slot_1 = LoadSlot(image=None, pos=(640, 140),text_input="SLOT 1: " + slot_state_text, 
+        slot_1_btn = LoadSlot(image=None, pos=(640, 140),text_input="SLOT 1: " + slot_state_text, 
                             font=get_font(45), base_color="White", hovering_color="Green", clickable = state1)
-        load_slot_1.change_color(load_mouse_pos)
-        load_slot_1.update(screen)
+        slot_1_btn.change_color(load_mouse_pos)
+        slot_1_btn.update(screen)
 
         #   SLOT 2 Configuration
         slot_reader_2 = SlotReader("saved_game2.txt")
@@ -115,10 +113,10 @@ def load_game() -> None:
             slot_state_text = "Click to Load"
         else:
             slot_state_text = "Empty slot"
-        load_slot_2 = LoadSlot(image=None, pos=(640, 290), text_input="SLOT 2: " + slot_state_text, 
+        slot_2_btn = LoadSlot(image=None, pos=(640, 290), text_input="SLOT 2: " + slot_state_text, 
                             font=get_font(45), base_color="White", hovering_color="Green", clickable = state2)
-        load_slot_2.change_color(load_mouse_pos)
-        load_slot_2.update(screen)
+        slot_2_btn.change_color(load_mouse_pos)
+        slot_2_btn.update(screen)
 
         #   SLOT 3 Configuration
         slot_reader_3 = SlotReader("saved_game3.txt")
@@ -127,10 +125,10 @@ def load_game() -> None:
             slot_state_text = "Click to Load"
         else:
             slot_state_text = "Empty slot"
-        load_slot_3 = LoadSlot(image=None, pos=(640, 440), text_input="SLOT 3: " + slot_state_text, 
+        slot_3_btn = LoadSlot(image=None, pos=(640, 440), text_input="SLOT 3: " + slot_state_text, 
                             font=get_font(45), base_color="White", hovering_color="Green", clickable = state3)
-        load_slot_3.change_color(load_mouse_pos)
-        load_slot_3.update(screen)
+        slot_3_btn.change_color(load_mouse_pos)
+        slot_3_btn.update(screen)
         
 
         #   GAME EVENTS
@@ -139,23 +137,23 @@ def load_game() -> None:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if load_game_back.check_for_input(load_mouse_pos):
+                if load_game_back_btn.check_for_input(load_mouse_pos):
                     main_menu()
-                if load_slot_1.check_for_input(load_mouse_pos):
+                if slot_1_btn.check_for_input(load_mouse_pos):
                     slot_reader = SlotReader("saved_game.txt")
                     #   RETREIVING THE SCORES FROM THE FILE 
                     score1 = slot_reader.get_score()[2][0]
                     score2 = slot_reader.get_score()[3][0]
                     score3 = slot_reader.get_score()[4][0]
                     SlotProfile(score1,score2,score3,1)
-                if load_slot_2.check_for_input(load_mouse_pos):
+                if slot_2_btn.check_for_input(load_mouse_pos):
                     slot_reader_2 = SlotReader("saved_game2.txt")
                     #   RETREIVING THE SCORES FROM THE FILE 
                     score1 = slot_reader_2.get_score()[2][0]
                     score2 = slot_reader_2.get_score()[3][0]
                     score3 = slot_reader_2.get_score()[4][0]
                     SlotProfile(score1,score2,score3,2)
-                if load_slot_3.check_for_input(load_mouse_pos):
+                if slot_3_btn.check_for_input(load_mouse_pos):
                     slot_reader_3 = SlotReader("saved_game3.txt")
                     #   RETREIVING THE SCORES FROM THE FILE 
                     score1 = slot_reader_3.get_score()[2][0]
